@@ -1,0 +1,22 @@
+Yaml
+
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+
+proxy-groups:
+  - name: AUTO
+    type: select
+    proxies: []
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,AUTO
